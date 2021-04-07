@@ -1,0 +1,238 @@
+-------------------------------------------------------
+ЗАДАНИЕ 1. Вывести на экран букву "W" из символов "*" 
+(звездочка).
+-------------------------------------------------------
+
+package com.metanit;
+
+public class Main {
+
+    public static void main(String[] args) {
+        System.out.println("*                  *");
+        System.out.println(" *                * ");
+        System.out.println("  *       *      *  ");
+        System.out.println("    *    * *   *    ");
+        System.out.println("      * *   * *     ");
+        System.out.println("       *     *      ");
+    }
+}
+
+-------------------------------------------------------
+ЗАДАНИЕ 2. Вывести на экран текст "Silence is golden".
+-------------------------------------------------------
+
+package com.metanit;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        System.out.println("Silence is golden");
+
+    }
+}
+
+-------------------------------------------------------
+ЗАДАНИЕ 3. Пользователь вводит три числа. Найдите 
+среднее арифметическое этих чисел, а также разность 
+удвоенной суммы первого и третьего чисел и утроенного 
+второго числа.
+-------------------------------------------------------
+
+package com.metanit;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.print("Введите a = ");
+        Scanner in = new Scanner(System.in);
+        float a = in.nextInt();
+
+        System.out.print("Введите b = ");
+        float b = in.nextInt();
+
+        System.out.print("Введите c = ");
+        float c = in.nextInt();
+
+
+        float old_c,old_b;
+        old_c=((a+b+c)/3);
+        old_b=(a+c)*2-b*3;;
+
+        System.out.printf("x=" + old_c + "\n");
+        System.out.printf("y=" + old_b + "\n");
+    }
+}
+
+-------------------------------------------------------
+ЗАДАНИЕ 4. Известно, что x кг конфет стоит a рублей. 
+Определите, сколько стоит y кг этих конфет, а также 
+сколько кг конфет можно купить на k рублей. 
+Все значения вводит пользователь.
+-------------------------------------------------------
+
+package com.metanit;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+        System.out.print("Введите x кг. конфет = ");
+        double x = in.nextDouble();
+
+        System.out.print("Введите a рублей = ");
+        double a = in.nextDouble();
+        double PriceForKg = a/x;
+        System.out.print("\n Цена за " + x + " кг. конфет - " + a + " рублей \n Цена за 1 кг. - " + PriceForKg + "\n");
+
+        System.out.print("\n Введите y кг. конфет = ");
+        double y = in.nextDouble();
+
+        System.out.print("\n Цена за " + y + " кг. конфет - " + (PriceForKg*y) + " рублей");
+
+        System.out.print("\n Введите k рублей = ");
+        double k = in.nextDouble();
+        System.out.print("За " + k + " рублей вы можете купить " + (k/PriceForKg) + " кг. конфет");
+
+    }
+}
+
+-------------------------------------------------------
+ЗАДАНИЕ 5. Пользователь вводит два числа. Вывести 
+наибольшее из них.
+-------------------------------------------------------
+
+package com.metanit;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        int x, y;
+        Scanner s = new Scanner(System.in);
+        do {
+            System.out.print("Введите x = ");
+            x = s.nextInt();
+
+            System.out.print("Введите y = ");
+            y = s.nextInt();
+
+            if (x == y) System.out.println("Вы ввели равные числа!");
+        } while (x == y);
+        {
+            if (x > y) System.out.println("Большее из них x = " + x);
+            else System.out.println("Большее из них y = " + y);
+        }
+    }
+}
+
+-------------------------------------------------------
+ЗАДАНИЕ 6. Даны два трехзначных числа. Найдите 
+шестизначное число, образованное из двух данных чисел 
+путем дописывания второго числа к первому справа.
+-------------------------------------------------------
+
+package com.metanit;
+
+public class Main {
+    public static void main(String[] args) {
+        int a = 245;
+        int b = 846;
+
+        System.out.println("" + a + + b + "");
+        }
+}
+
+-------------------------------------------------------
+ЗАДАНИЕ 7. Выведите на экран числа 1, 2, 3, 4, ..., 20.
+-------------------------------------------------------
+
+package com.metanit;
+public class Main {
+
+    public static void main(String[] args) {
+        int i = 1;
+        while (i < 21) {
+            System.out.println (i); 
+            i = i + 1;    
+        }
+    }
+}
+
+----------------------------------------------------
+ЗАДАНИЕ 8. Найдите количество целых чисел от a до b 
+включительно, которые делятся на 12.
+----------------------------------------------------
+
+package com.metanit;
+public class Main {
+
+    public static void main(String[] args) {
+                int[] mas = new int[30];
+                int j;
+                j = 0;
+                for(int i=0; i<mas.length; i++){
+                    mas[i] = (int)(Math.random()*100);
+                }
+                for (int i=0; i<mas.length; i++) {
+                    if(mas[i]%12==0) {
+                        j++;
+                    }
+                    System.out.print(mas[i]+" ");
+                }
+                System.out.println();
+                System.out.println("Количество целых чисел:" +j+ "");
+            }
+}
+
+----------------------------------------------------
+ЗАДАНИЕ 9. Вывести квадрат 7 на 7 из случайных букв.
+----------------------------------------------------
+
+package com.metanit;
+import java.util.Random;
+
+public class Main {
+    public static void main(String[] args) {
+        Random r = new Random();
+        char c ='a';
+        int k=0;
+        for (int i = 0; i < 7; i++) {
+            k++;
+            System.out.printf("%S ", (c = (char) (r.nextInt(26) + 'a'))," ");
+            System.out.printf("%S ", (c = (char) (r.nextInt(26) + 'a'))," ");
+            System.out.printf("%S ", (c = (char) (r.nextInt(26) + 'a'))," ");
+            System.out.printf("%S ", (c = (char) (r.nextInt(26) + 'a'))," ");
+            System.out.printf("%S ", (c = (char) (r.nextInt(26) + 'a'))," ");
+            System.out.printf("%S ", (c = (char) (r.nextInt(26) + 'a'))," ");
+            System.out.printf("%S ", (c = (char) (r.nextInt(26) + 'a'))," ");
+            System.out.printf("\n");
+        }
+    }
+}
+
+----------------------------------------------------------------
+ЗАДАНИЕ 10. Пользователь вводит англ. букву, 
+вывести следующие три по алфавиту. Если алфавит закончился, 
+то вывести циклично с начала алфавита, то есть если z, то a b c.  
+Вывод только маленьких букв. Учесть, что пользователь может 
+ввести заглавную букву.
+----------------------------------------------------------------
+
+package com.metanit;
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Введите символ: ");
+        String alphabet = "abcdefghijklmnopqrstuvwxyzabc";
+        String input = new Scanner(System.in).next().substring(0,1);
+
+        int pos = alphabet.indexOf(input.toLowerCase());
+
+        Arrays.asList(alphabet.substring(pos + 1, pos + 4).split("")).forEach(s -> {System.out.println(s);});
+    }
+}
